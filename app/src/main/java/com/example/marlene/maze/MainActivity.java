@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     public float PosX, PosY = 0.0f;
     public float VelX, VelY = 0.0f;
 
-    public float frameTime = 0.666f;
+    public float frameTime = 0.7f;
     public float xmax,ymax;
 
 
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         setContentView(R.layout.activity_main);
         Display display = getWindowManager().getDefaultDisplay();
         xmax = (float) display.getWidth() - 50;
-        ymax = (float) display.getHeight() - 200;
+        ymax = (float) display.getHeight() - 260;
 
         senSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         senAccelerometer = senSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
@@ -58,7 +58,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             //sensor values(x and y) and current time.
             AccX = sensorEvent.values[0];
             AccY = sensorEvent.values[1];
-            long t = System.currentTimeMillis();
 
             updateBall();
 
@@ -72,12 +71,12 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     public void updateBall(){
 
-        VelX += (AccX * frameTime);
-        VelY += (AccY * frameTime);
+        VelX += (AccX*1.5f * frameTime);
+        VelY += (AccY*1.5f * frameTime);
 
 
-        float xS = (VelX/2)*frameTime;
-        float yS = (VelY/2)*frameTime;
+        float xS = (VelX/ 1.5f)*frameTime;
+        float yS = (VelY/ 1.5f)*frameTime;
 
         PosX -= xS;
         PosY += yS;
