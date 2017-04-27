@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         setContentView(R.layout.activity_main);
         Display display = getWindowManager().getDefaultDisplay();
         xmax = (float) display.getWidth() - 50;
-        ymax = (float) display.getHeight() - 50;
+        ymax = (float) display.getHeight() - 200;
 
         senSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         senAccelerometer = senSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
@@ -80,18 +80,24 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         float yS = (VelY/2)*frameTime;
 
         PosX -= xS;
-        PosY -= yS;
+        PosY += yS;
 
         if (PosX > xmax) {
             PosX = xmax;
+            VelX = 0.0f;
+
         } else if (PosX < 0) {
             PosX = 0;
+            VelX = 0.0f;
         }
         if (PosY > ymax) {
             PosY = ymax;
+            VelY = 0.0f;
         } else if (PosY < 0) {
             PosY = 0;
+            VelY = 0.0f;
         }
+
 
 
     }
