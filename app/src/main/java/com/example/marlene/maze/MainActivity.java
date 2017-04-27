@@ -1,4 +1,4 @@
-package com.example.marlene.accelerometertest;
+package com.example.marlene.maze;
 
 import android.content.Context;
 import android.hardware.Sensor;
@@ -11,8 +11,8 @@ import android.util.DisplayMetrics;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import static com.example.marlene.accelerometertest.R.id.imageView1;
-import static com.example.marlene.accelerometertest.R.id.text;
+import static com.example.marlene.maze.R.id.imageView1;
+import static com.example.marlene.maze.R.id.text;
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener{
 
