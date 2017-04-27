@@ -1,4 +1,4 @@
-package com.example.marlene.maze;
+package com.example.marlene.accelerometertest;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.marlene.maze", appContext.getPackageName());
+        assertEquals("com.example.marlene.accelerometertest", appContext.getPackageName());
     }
 }

@@ -1,4 +1,4 @@
-package com.example.marlene.maze;
+package com.example.marlene.accelerometertest;
 
 import org.junit.Test;
 
